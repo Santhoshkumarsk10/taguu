@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+    --gold: #ffffff;
+    --gold-glow: #ffffff;
+    --gold-dark: #cccccc;
+    --bamboo-green: #ffffff;
+    --bamboo-light: #f0f0f0;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-pink: #e0e0e0;
+    --accent-blue: #d0d0d0;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.12);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    background-image: linear-gradient(135deg, #181818 0%, #000000 100%);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #666666;
+  }
+}
+
+/* Custom Font classes */
+.font-serif-custom {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-handwritten {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) rotate(-1deg) scaleY(1); }
+  100% { transform: translateX(-50%) rotate(1deg) scaleY(1.08); }
+}
+
+.animate-flicker {
+  animation: flicker 0.15s ease infinite alternate;
+}
+
+@keyframes marqueeBlink {
+  0%, 100% { border-color: #333333; opacity: 0.8; }
+  50% { border-color: #ffffff; opacity: 1; }
+}
+
+.animate-marquee-blink {
+  animation: marqueeBlink 0.8s infinite;
+}
+
+@keyframes giftShake {
+  0%, 100% { transform: rotate(0) scale(1); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(-4deg) scale(1.02); }
+  20%, 40%, 60%, 80% { transform: rotate(4deg) scale(1.02); }
+}
+
+.animate-gift-shake {
+  animation: giftShake 0.6s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 3D Card Flip Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
